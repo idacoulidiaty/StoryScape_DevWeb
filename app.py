@@ -4,6 +4,8 @@ from flask import render_template
 from os import listdir
 from os.path import isfile, join
 
+from ia import test
+
 
 app = Flask(__name__)
 

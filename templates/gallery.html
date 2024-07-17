@@ -38,7 +38,7 @@
 
 
         {% for image in images %}
-            <img class="gallery-image" src="{{ url_for('static', filename=image) }}" alt="Image 1">
+            <a img class="gallery-image" src="{{ url_for('static', filename=image) }}" alt="Image 1"></a>
         {% endfor %}
 
         </div>
