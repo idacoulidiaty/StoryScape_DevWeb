@@ -3,17 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gallery-StoryScape</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename= 'style.css') }}">
+    <title>Gallery - StoryScape</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
-
 <body>
     <header>
         <h1><strong>WELCOME TO STORYSCAPE : WHERE THE MAGIC BEGINS!</strong></h1>
     </header>
-        
+    
     <main>
-
         <div class="card">
             <a href="{{ url_for('index') }}" class="button">Home</a>
             <a href="#" class="button">Account</a>
@@ -26,21 +24,13 @@
             <h3>Choose one story!</h3>
         </div>
 
-        <!-- <div class="gallery">
-            <img class="gallery-image" src="./images/dinos.jpeg" alt="Image 1">
-            <img class="gallery-image" src="./images/enfants.jpeg" alt="Image 2">
-            <img class="gallery-image" src="./images/garcon+lion.jpeg" alt="Image 3">
-            <img class="gallery-image" src="./images/lion.png" alt="Image 4">
-            <img class="gallery-image" src="./images/oiseaux et garcon.jpeg" alt="Image 5">
-            <img class="gallery-image" src="./images/ours_brun.jpeg" alt="Image 6"> 
-            <img class="gallery-image" src="./images/ptit_chaperon.jpeg" alt="Image 7">
-            <img class="gallery-image" src="./images/ptit_garcon.jpeg" alt="Image 8"> -->
-
-
-        {% for image in images %}
-            <a img class="gallery-image" src="{{ url_for('static', filename=image) }}" alt="Image 1"></a>
-        {% endfor %}
-
+        <div class="gallery">
+            {% for story, image in images %}
+                <div class="gallery-item">
+                    <img class="gallery-image" src="{{ url_for('static', filename=image) }}" alt="Image">
+                    <p>{{ story }}</p>
+                </div>
+            {% endfor %}
         </div>
     </main>
 </body>

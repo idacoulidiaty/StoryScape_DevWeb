@@ -7,6 +7,10 @@ def get_images_paths(folder_path):
     images_livre = ['./images/' + image for image in listdir(folder_path) if isfile(join(folder_path, image))]
     return images_livre
 
+def get_images_paths_for_html(folder_path):
+    images_livre = ['../static/images/' + image for image in listdir(folder_path) if isfile(join(folder_path, image))]
+    return images_livre
+
 def generate_story(path):
     res = ollama.chat(
         model='llava',

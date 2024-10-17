@@ -1,45 +1,41 @@
-
 <!doctype html>
-<html>
-    <head>
-        <meta charset="utf-8" />
-        <title>StoryScape</title>
-        <!--<link rel="stylesheet" type=text/css href="static/style.css" />-->
-        <link rel="stylesheet" href="{{ url_for('static', filename= 'style.css') }}">
-    </head>
-    <body>
-        <header>
-            <h1><strong>WELCOME TO STORYSCAPE : WHERE THE MAGIC BEGINS!</strong></h1>
-        </header>
-        
-        <main>
-            <div class="card">
-                <a href="{{ url_for('index') }}" class="button">Home</a>
-                <a href="#" class="button">Account</a>
-                <a href= "{{ url_for('gallery') }}" class="button">Click here to discover magical stories</a>
-                <a href="#" class="button">About Us</a>
-                </div>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>StoryScape</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1><strong>WELCOME TO STORYSCAPE : WHERE THE MAGIC BEGINS!</strong></h1>
+    </header>
+    
+    <main>
+        <div class="card">
+            <a href="{{ url_for('index') }}" class="button">Home</a>
+            <a href="#" class="button">Account</a>
+            <a href="{{ url_for('gallery') }}" class="button">Click here to discover magical stories</a>
+            <a href="#" class="button">About Us</a>
+        </div>
 
-            <div class="images">
-                <img src="./static/images/enfants.jpeg" alt="Image of a storybook cover">
-                <img src="./static/images/lion.png" alt="Image of a storybook cover">
-                </div>
+        <div class="images">
+            <img src="{{ url_for('static', filename='images/enfants.jpeg') }}" alt="Image of a storybook cover">
+            <img src="{{ url_for('static', filename='images/lion.png') }}" alt="Image of a storybook cover">
+        </div>
 
-            <div class="texte">
-                <h2>Fun Stories </h2>
-                <h2>For Children</h2>
-                </div>
+        <div class="texte">
+            <h2>Fun Stories </h2>
+            <h2>For Children</h2>
+        </div>
 
-            <div class="descriptif">
-                <h3>Happy Readers</h3>
-                <p>Get ready to embark on thrilling adventures, meet fantastical creatures  and discover magical worlds. Our collection of children's stories is packed with excitement, humor and heart. From classic tales to brand new ones, our stories are designed to spark imagination and inspire young minds. So, come along and let the magic begin!</p>
-                
-                </div>
+        <div class="descriptif">
+            <h3>Happy Readers</h3>
+            <p>Get ready to embark on thrilling adventures, meet fantastical creatures, and discover magical worlds. Our collection of children's stories is packed with excitement, humor, and heart. From classic tales to brand new ones, our stories are designed to spark imagination and inspire young minds. So, come along and let the magic begin!</p>
+        </div>
 
-            <div class="read">
-                <a href= "{{ url_for('gallery') }}"  class="button">Start Reading!</a>
-            </div>
-        </main>
-    </body>
-
-        
+        <div class="read">
+            <a href="{{ url_for('gallery') }}" class="button">Start Reading!</a>
+        </div>
+    </main>
+</body>
+</html>
